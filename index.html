@@ -1,0 +1,132 @@
+<!-- Disclaimer by Ankit Raj -->
+<!-- This project contains comments in HTML, CSS, and JavaScript files to help understand why each part is used. -->
+<!-- The comments explain the purpose of different sections, making it easier to learn and modify the code. -->
+<!-- Feel free to explore and improve the project! Happy coding! 😊 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Mood Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Daily Mood Tracker</h1>
+      <div class="view-controls">
+        <button id="day-view" class="active">Day</button>
+        <button id="week-view">Week</button>
+        <button id="month-view">Month</button>
+      </div>
+    </header>
+
+    <section class="mood-selection">
+      <h2>How are you feeling today?</h2>
+      <div class="mood-options">
+        <div class="mood-option" data-mood="happy">
+          <img src="image-collecion/happy.webp" alt="Happy" class="mood-img">
+          <span>Happy</span>
+        </div>
+        <div class="mood-option" data-mood="sad">
+          <img src="image-collecion/sad.webp" alt="Sad" class="mood-img">
+          <span>Sad</span>
+        </div>
+        <div class="mood-option" data-mood="neutral">
+          <img src="image-collecion/neutral.webp" alt="Neutral" class="mood-img">
+          <span>Neutral</span>
+        </div>
+        <div class="mood-option" data-mood="excited">
+          <img src="image-collecion/exited.webp" alt="Excited" class="mood-img">
+          <span>Excited</span>
+        </div>
+        <div class="mood-option" data-mood="annoyed">
+          <img src="image-collecion/anoyed.webp" alt="Annoyed" class="mood-img">
+          <span>Annoyed</span>
+        </div>
+        <div class="mood-option" data-mood="scared">
+          <img src="image-collecion/Scared.webp" alt="Scared" class="mood-img">
+          <span>Scared</span>
+        </div>
+      </div>
+      <div class="mood-notes">
+        <textarea id="mood-note" placeholder="Add notes about your day (optional)"></textarea>
+      </div>
+      <div class="button-group">
+        <button id="save-mood" class="btn-primary">Save Today's Mood</button>
+        <button id="reset-tracker" class="btn-danger">Reset All Data</button>
+      </div>
+    </section>
+
+    <section class="mood-timeline">
+      <h2>Your Mood Timeline</h2>
+      <div id="day-view-container" class="timeline-container active">
+        <div id="today-mood" class="today-mood">
+          <p>Today: <span id="current-date"></span></p>
+          <div id="today-mood-display">No mood recorded yet</div>
+        </div>
+      </div>
+      
+      <div id="week-view-container" class="timeline-container">
+        <div class="week-grid">
+          <div class="weekday-labels">
+            <div>Sunday</div>
+            <div>Monday</div>
+            <div>Tuesday</div>
+            <div>Wednesday</div>
+            <div>Thursday</div>
+            <div>Friday</div>
+            <div>Saturday</div>
+          </div>
+          <div id="week-moods" class="week-moods">
+            <!-- Week mood entries will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+      
+      <div id="month-view-container" class="timeline-container">
+        <div class="month-controls">
+          <button id="prev-month">←</button>
+          <h3 id="current-month">March 2025</h3>
+          <button id="next-month">→</button>
+        </div>
+        <div class="calendar-grid">
+          <div class="calendar-header">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+          <div id="calendar-days" class="calendar-days">
+            <!-- Calendar days will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mood-stats">
+      <h2>Mood Statistics</h2>
+      <div class="stats-container">
+        <div class="stat-box">
+          <h3>Most Common Mood</h3>
+          <div id="common-mood">-</div>
+        </div>
+        <div class="stat-box">
+          <h3>Mood Streak</h3>
+          <div id="mood-streak">-</div>
+        </div>
+        <div class="stat-box">
+          <h3>Total Days Tracked</h3>
+          <div id="days-tracked">0</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
